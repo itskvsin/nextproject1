@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Divider from "@/components/Divider";
 
 type ProcessStep = {
   title: string;
