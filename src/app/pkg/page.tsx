@@ -82,6 +82,12 @@ export default function Packages() {
             );
           })}
         </div>
+        <p className="mt-12 text-sm text-neutral-600 max-w-2xl mx-auto">
+          All prices exclude travel and extra graphics or thumbnails. <br />
+          <span className="font-medium text-neutral-400">
+            Custom packages are available upon request.
+          </span>
+        </p>
       </div>
     </section>
   );
