@@ -48,24 +48,60 @@ type PackageType = {
 
 export default function Packages() {
   return (
-    <section className="py-20 text-center bg-[radial-gradient(circle_at_30%_20%,rgba(246,165,17,0.2),#000000)] h-screen">
+    <section className="py-20 text-center bg-[radial-gradient(circle_at_85%_20%,rgba(246,165,17,0.1),#000000)] h-screen">
       <div className="text-4xl font-bold mb-12 text-black">
         <div className="flex gap-2 text-center justify-center">
           {" "}
-          <h1 className="text-4xl text-gray-200 font-bold mb-12">Our</h1>
-          <h1 className="text-4xl font-bold mb-8 text-[#F6A511]">Packages</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 12,
+            }}
+            className="text-4xl text-gray-200 font-bold mb-12"
+          >
+            Our
+          </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 12,
+            }}
+            className="text-4xl font-bold mb-8 text-[#F6A511]"
+          >
+            Packages
+          </motion.h1>
         </div>
         <div>
           <Divider />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+        <div className="md:grid grid h-110 justify-center md:justify-between items-start overflow-auto md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
           {packages.map((pkg, i) => {
             const { title, price, features } = pkg;
             return (
               <motion.div
-                whileHover={{ scale: 1.01, backgroundColor: "#393939" }}
-                className="border border-[#F6A511] rounded-2xl p-6 shadow-lg bg-[#343434] text-white  hover:shadow-xl transition-all duration-300 text-left"
                 key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 60,
+                  damping: 12,
+                  delay: i * 0.2,
+                }}
+                whileHover={{
+                  scale: 1.03,
+                  boxShadow: "0 0 20px rgba(246,165,17,0.3)",
+                }}
+                className="border border-[#F6A511] rounded-2xl p-6 shadow-lg bg-[#343434] text-white  hover:shadow-xl transition-all duration-300 text-left"
               >
                 <h2 className="text-2xl font-bold mb-2 bg-[#F6A511] bg-clip-text text-transparent">
                   {title}
@@ -82,7 +118,7 @@ export default function Packages() {
             );
           })}
         </div>
-        <p className="mt-12 text-sm text-neutral-600 max-w-2xl mx-auto">
+        <p className="mt-12 px-10 text-sm text-neutral-600 max-w-2xl mx-auto">
           All prices exclude travel and extra graphics or thumbnails. <br />
           <span className="font-medium text-neutral-400">
             Custom packages are available upon request.

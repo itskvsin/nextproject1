@@ -85,7 +85,7 @@ const PreviousWork = () => {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-6 bg-[radial-gradient(circle_at_30%_20%,rgba(246,165,17,0.2),#000000)]">
+    <section className=" text-white py-20 px-6 bg-[radial-gradient(circle_at_85%_20%,rgba(246,165,17,0.1),#000000)]">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">
           Our <span className="text-[#F6A511]">Past Work</span>
@@ -104,7 +104,7 @@ const PreviousWork = () => {
               href={project.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.01 }}
               className="overflow-hidden rounded-lg border border-[#F6A511]"
             >
               <Image
