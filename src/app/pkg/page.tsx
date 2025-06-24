@@ -7,7 +7,6 @@ import Divider from "@/components/Divider";
 const packages: PackageType[] = [
   {
     title: "5 UGC Videos",
-    price: "₹125,000",
     features: [
       "3 hooks per video",
       "2 on-screen models included",
@@ -18,7 +17,6 @@ const packages: PackageType[] = [
   },
   {
     title: "10 UGC Videos",
-    price: "₹250,000",
     features: [
       "3 hooks per video",
       "4 on-screen models included",
@@ -29,7 +27,6 @@ const packages: PackageType[] = [
   },
   {
     title: "15 UGC Videos",
-    price: "₹375,000",
     features: [
       "3 hooks per video",
       "5 on-screen models included",
@@ -42,7 +39,6 @@ const packages: PackageType[] = [
 
 type PackageType = {
   title: string;
-  price: string;
   features: string[];
 };
 
@@ -84,7 +80,7 @@ export default function Packages() {
         </div>
         <div className="md:grid grid h-110 justify-center md:justify-between items-start overflow-auto md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
           {packages.map((pkg, i) => {
-            const { title, price, features } = pkg;
+            const { title , features } = pkg;
             return (
               <motion.div
                 key={i}
@@ -101,13 +97,10 @@ export default function Packages() {
                   scale: 1.03,
                   boxShadow: "0 0 20px rgba(246,165,17,0.3)",
                 }}
-                className="border border-[#F6A511] rounded-2xl p-6 shadow-lg bg-[#343434] text-white  hover:shadow-xl transition-all duration-300 text-left"
+                className="border mt-10 border-[#F6A511] rounded-2xl p-6 shadow-lg bg-[#343434] text-white  hover:shadow-xl transition-all duration-300 text-left"
               >
                 <h2 className="text-2xl font-bold mb-2 bg-[#F6A511] bg-clip-text text-transparent">
                   {title}
-                </h2>
-                <h2 className="text-xl font-semibold bg-transparent mb-4">
-                  {price}
                 </h2>
                 <ul className="list-disc text-sm list-inside text-gray-300 space-y-1">
                   {features.map((features, i) => {
