@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect , useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -9,9 +9,9 @@ type Feature = {
   titleEnd: string;
   description: string;
   image: string;
-}
+};
 
-export default function GSAPHoverRevealSection({feature}: {feature: Feature}) {
+export default function GSAPHoverRevealSection({ feature }: { feature: Feature }) {
   const [hovered, setHovered] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);

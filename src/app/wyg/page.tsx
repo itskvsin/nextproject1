@@ -3,7 +3,7 @@
   import React from "react";
   import { motion } from "framer-motion";
   // import Image from "next/image"; , { useState }
-  import GSAPHoverRevealSection from "../zippico/page";
+  import GSAPHoverRevealSection from "../../components/GSAPHoverRevealSection";
 
   // Types
   type Feature = {
