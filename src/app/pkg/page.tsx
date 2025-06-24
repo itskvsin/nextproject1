@@ -48,7 +48,7 @@ type PackageType = {
 
 export default function Packages() {
   return (
-    <section className="py-20 text-center">
+    <section className="py-20 text-center bg-[radial-gradient(circle_at_30%_20%,rgba(246,165,17,0.2),#000000)] h-screen">
       <div className="text-4xl font-bold mb-12 text-black">
         <div className="flex gap-2 text-center justify-center">
           {" "}

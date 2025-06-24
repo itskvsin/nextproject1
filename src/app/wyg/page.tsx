@@ -54,7 +54,7 @@ const WYG = () => {
   const [activeImage, setActiveImage] = useState<string | null>(features[0].image);
 
   return (
-    <section className="py-10 bg-black text-white relative">
+    <section className="py-10 bg-[radial-gradient(circle_at_30%_20%,rgba(246,165,17,0.2),#000000)] bg-black text-white relative">
       <div className="text-center mb-14">
         <div className="flex justify-center items-center gap-3">
           <motion.h2

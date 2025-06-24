@@ -38,7 +38,7 @@ const steps: ProcessStep[] = [
 
 const ProcessRoadmap = () => {
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-20 bg-black text-white bg-[radial-gradient(circle_at_30%_20%,rgba(246,165,17,0.2),#000000)]">
         <div className="flex justify-center items-center gap-4">
         <motion.h2 initial={{opacity:0, y: -20}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1, delay: 0.5}} viewport={{once: false}} className="text-4xl font-bold text-center mb-16">Our </motion.h2>
       <motion.h2 
