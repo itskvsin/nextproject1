@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useLayoutEffect , useState } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import SplitText from "gsap/SplitText";
+import { motion } from "framer-motion";
 
 type Feature = {
   titleStart: string;
@@ -11,7 +13,11 @@ type Feature = {
   image: string;
 };
 
-export default function GSAPHoverRevealSection({ feature }: { feature: Feature }) {
+export default function GSAPHoverRevealSection({
+  feature,
+}: {
+  feature: Feature;
+}) {
   const [hovered, setHovered] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,6 +38,18 @@ export default function GSAPHoverRevealSection({ feature }: { feature: Feature }
       opacity: 0,
       overflow: "hidden",
       visibility: "hidden",
+    });
+
+    gsap.registerPlugin(SplitText);
+
+    let split = SplitText.create(".title" , {
+      type: "chars words lines"
+    })
+
+    gsap.from(split.lines, {
+      y: 30,
+      stagger: 0.05,
+      duration: 1,
     });
 
     const contentTimeline = gsap.timeline({ paused: true });
@@ -81,7 +99,7 @@ export default function GSAPHoverRevealSection({ feature }: { feature: Feature }
         height: fullHeight,
         opacity: 1,
         visibility: "visible",
-        duration: 0.5,
+        duration: 1,
         ease: "power2.out",
       });
 
@@ -111,7 +129,11 @@ export default function GSAPHoverRevealSection({ feature }: { feature: Feature }
 
   return (
     <section className="w-full border-b border-white/20">
-      <div
+      <motion.div
+        // initial={{ opacity: 0, y: 20 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 1, delay: 0.5 }}
+        // viewport={{ once: true }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         ref={containerRef}
@@ -125,8 +147,8 @@ export default function GSAPHoverRevealSection({ feature }: { feature: Feature }
             [
           </div>
 
-          <div className="flex items-center gap-2">
-            <p className="text-white">{feature.titleStart}</p>
+          <div className="flex items-center gap-1">
+            <p className="text-[#F6A511] title">{feature.titleStart}</p>
             <div
               className={`transition-all duration-500 ${
                 hovered
@@ -179,7 +201,7 @@ export default function GSAPHoverRevealSection({ feature }: { feature: Feature }
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

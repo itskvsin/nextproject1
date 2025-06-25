@@ -59,7 +59,7 @@
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-4xl font-bold"
+              className="text-6xl font-bold"
             >
               Our
             </motion.h2>
@@ -68,7 +68,7 @@
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-4xl font-bold text-[#F6A511]"
+              className="text-6xl font-bold text-[#F6A511]"
             >
               Services
             </motion.h2>
