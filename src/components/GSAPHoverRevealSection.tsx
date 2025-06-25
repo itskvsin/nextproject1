@@ -25,7 +25,6 @@ export default function GSAPHoverRevealSection({
   const bracketR = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -81,16 +80,6 @@ export default function GSAPHoverRevealSection({
         },
         "-=0.3"
       )
-      .to(
-        buttonRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.4,
-          ease: "power3.out",
-        },
-        "-=0.3"
-      );
 
     const handleEnter = () => {
       const fullHeight = reveal.scrollHeight;
@@ -130,10 +119,6 @@ export default function GSAPHoverRevealSection({
   return (
     <section className="w-full border-b border-white/20">
       <motion.div
-        // initial={{ opacity: 0, y: 20 }}
-        // whileInView={{ opacity: 1, y: 0 }}
-        // transition={{ duration: 1, delay: 0.5 }}
-        // viewport={{ once: true }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         ref={containerRef}
@@ -193,12 +178,6 @@ export default function GSAPHoverRevealSection({
             >
               {feature.description}
             </p>
-            <button
-              ref={buttonRef}
-              className="px-5 py-2 rounded-full w-2/12 bg-[#F6A511] text-black text-sm font-semibold hover:bg-[#ffbd3b] transition-all opacity-0 translate-y-4"
-            >
-              Explore More
-            </button>
           </div>
         </div>
       </motion.div>
